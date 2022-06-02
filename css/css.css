@@ -1,0 +1,106 @@
+@font-face {
+  font-family: BigNoodle;
+  font-weight: 400;
+  src: url("fonts/BigNoodleTitling/BigNoodle.woff2") format("woff2"),
+    url("/fonts/BigNoodleTitling/BigNoodle.woff2") format("woff"),
+    url("/fonts/BigNoodleTitling/BigNoodle.eot") format("embedded-opentype"),
+    url("/fonts/BigNoodleTitling/BigNoodle.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: CircularBook;
+  src: url("/fonts/Circular/CircularStd-Book.woff2") format("woff2"),
+    url("/fonts/Circular/CircularStd-Book.woff") format("woff"),
+    url("/sites/default/files/site/fonts/Circular/CircularStd-Book.eot")
+      format("embedded-opentype");
+}
+
+@font-face {
+  font-family: CircularBlack;
+  src: url("/fonts/Circular/CircularStd-Black.woff2") format("woff2"),
+    url("/fonts/Circular/CircularStd-Black.woff") format("woff"),
+    url("/fonts/Circular/CircularStd-Black.eot") format("embedded-opentype");
+}
+
+@font-face {
+  font-family: CircularMedium;
+  src: url("/fonts/Circular/CircularStd-Medium.woff2") format("woff2"),
+    url("/fonts/Circular/CircularStd-Medium.woff") format("woff"),
+    url("/fonts/Circular/CircularStd-Medium.eot") format("embedded-opentype");
+}
+body {
+  font-family: CircularBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.428571429;
+  background-color: #39207c;
+  coler: #fff;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "BigNoodle", sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #fff;
+  margin: 1em;
+}
+
+iframe {
+  display: block; /* iframes are inline by default */
+  background: #000;
+  border: none; /* Reset default border */
+  height: 710px !important; /* Viewport-relative units height: 100vh;  */
+  width: 100vw;
+  margin-bottom: 1em;
+}
+
+.jumbotron h1 {
+  color: #ffd100;
+  font-weight: 800;
+  margin: 0;
+}
+.bg-cover {
+  background-attachment: static;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-primary {
+  color: #ffd100;
+  background-color: #39207c;
+  border-color: #39207c;
+  padding: 1.125rem 1.25rem;
+  width: auto;
+  font-family: "BigNoodle", sans-serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  border-width: 2px;
+  text-align: center;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-appearance: none;
+  border: 0;
+}
+
+a.btn-primary:hover {
+  background-color: #ffd100;
+  color: #39207c;
+  cursor: grab;
+}
+
+footer {
+  color: #fff;
+  font-weight: bold;
+  font-size: larger;
+}

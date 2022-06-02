@@ -1,0 +1,51 @@
+// Font import
+
+@font-face {
+  font-family: BigNoodle;
+  font-weight: 400;
+  src: url("/sites/default/files/site/fonts/BigNoodleTitling/BigNoodle.woff2")
+      format("woff2"),
+    url("/sites/default/files/site/fonts/BigNoodleTitling/BigNoodle.woff2")
+      format("woff"),
+    url("/sites/default/files/site/fonts/BigNoodleTitling/BigNoodle.eot")
+      format("embedded-opentype"),
+    url("/sites/default/files/site/fonts/BigNoodleTitling/BigNoodle.ttf")
+      format("ttf");
+}
+
+@font-face {
+  font-family: CircularBook;
+  src: url("/sites/default/files/site/fonts/Circular/CircularStd-Book.woff2")
+      format("woff2"),
+    url("/sites/default/files/site/fonts/Circular/CircularStd-Book.woff")
+      format("woff"),
+    url("/sites/default/files/site/fonts/Circular/CircularStd-Book.eot")
+      format("embedded-opentype");
+}
+
+@font-face {
+  font-family: CircularBlack;
+  src: url("/sites/default/files/site/fonts/Circular/CircularStd-Black.woff2")
+      format("woff2"),
+    url("/sites/default/files/site/fonts/Circular/CircularStd-Black.woff")
+      format("woff"),
+    url("/sites/default/files/site/fonts/Circular/CircularStd-Black.eot")
+      format("embedded-opentype");
+}
+
+@font-face {
+  font-family: CircularMedium;
+  src: url("/sites/default/files/site/fonts/Circular/CircularStd-Medium.woff2")
+      format("woff2"),
+    url("/sites/default/files/site/fonts/Circular/CircularStd-Medium.woff")
+      format("woff"),
+    url("/sites/default/files/site/fonts/Circular/CircularStd-Medium.eot")
+      format("embedded-opentype");
+}
+
+$violet: #41449f;
+$violet-300: #39207c; // #babad3;
+$violet-100: #e9e9f2;
+$green: #00746b;
+$red: #ff4141;
+$white: #ffffff;
