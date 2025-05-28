@@ -104,3 +104,10 @@ footer {
   font-weight: bold;
   font-size: larger;
 }
+.jumbotron-audio {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(/images/audio.jpg);
+}
+
+.jumbotron-monitoring {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(/images/monitoring.jpg);
+}
