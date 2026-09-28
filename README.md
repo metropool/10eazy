@@ -1,26 +1,57 @@
-10 Eazy - dB meting Metropool / 10eazy.com
+# 10eazy – Metropool dB Meting
 
+Static website that gives Metropool staff a single entry point to the live decibel (dB)
+measurement viewers for each stage/zaal across their venues in Hengelo, Enschede and
+Almelo. It's plain HTML/CSS (Bootstrap) hosted via GitHub Pages, with no build step and
+no backend of its own — each page just embeds an `<iframe>` pointing at a dB meter
+device's built-in web viewer on the local network.
 
-**index.html - Metropool dB Measurement Dashboard**
+Live at: https://10eazy.metropool.nl (see [CNAME](CNAME))
 
-This HTML file creates a web page that serves as the main dashboard for a sound level (decibel or "dB") measurement system used by Metropool, which appears to be a venue or event management company. The page acts like a digital menu or control panel that allows users to access different sound monitoring systems across multiple locations and stages.
+## How it works
 
-**Purpose of the Code**
+- [`index.html`](index.html) — landing page. Shows a "jumbotron" banner per stage with a
+  "Start hier" button that links to that stage's page under [`pages/`](pages).
+- [`pages/*.html`](pages) — one page per stage (or per combined view). Each embeds an
+  `<iframe src="http://<device-ip>/10eazy_webviewer.html">` that loads the live
+  measurement UI served directly by the dB meter hardware on the venue's local network.
+- Combined pages (`beiden-hengelo.html`, `beiden-enschede.html`) stack two iframes so two
+  stages can be watched at once.
+- [`css/css.css`](css/css.css) — shared styling (fonts, jumbotron/button colors, iframe
+  sizing). [`css/variables.scss`](css/variables.scss) holds Bootstrap variable overrides.
+- [`bootstrap/`](bootstrap) — vendored Bootstrap CSS/JS. [`fonts/`](fonts) — vendored
+  webfonts (BigNoodle, Circular). [`images/`](images) — logos and jumbotron background
+  photos per venue.
 
-The primary purpose of this webpage is to provide a centralized interface where users can monitor sound levels at different music venues and stages across three cities: Hengelo, Enschede, and Almelo. Think of it like a TV remote control, but instead of changing channels, users click buttons to view sound measurements from different concert halls or stages. This is likely used by sound engineers, venue managers, or regulatory officials who need to ensure that music venues comply with noise regulations.
+Because the iframe sources are local IP addresses on Metropool's own network, the dB
+viewers only load when the page is opened from a device on that network (or via VPN);
+they will not load over the public internet.
 
-**Input and User Interaction**
+## Pages and their device IPs
 
-The page doesn't take traditional data inputs like a form would. Instead, it receives user interactions through clickable buttons and links. When a user visits this webpage in their browser, they see a visual menu with different options. The main inputs are mouse clicks on various buttons that say "Start hier" (which means "Start here" in Dutch). Each button corresponds to a different venue or stage where sound measurements are being taken.
+| Page | Stage / venue | Viewer IP |
+|---|---|---|
+| [`pages/jupiler.html`](pages/jupiler.html) | Bud Stage \| Hengelo | `192.168.1.195` |
+| [`pages/jackdaniel.html`](pages/jackdaniel.html) | Jack Daniel's Stage \| Hengelo | `192.168.1.196` |
+| [`pages/beiden-hengelo.html`](pages/beiden-hengelo.html) | Bud Stage + Jack Daniel's Stage (combined) | `192.168.1.195` + `192.168.1.196` |
+| [`pages/hertogjanzaal.html`](pages/hertogjanzaal.html) | Leffe Stage \| Enschede | `172.16.62.201` |
+| [`pages/saxionzaal.html`](pages/saxionzaal.html) | Saxion Stage \| Enschede | `172.16.62.202` |
+| [`pages/beiden-enschede.html`](pages/beiden-enschede.html) | Leffe Stage + Saxion Stage (combined) | `172.16.62.202` (both iframes) |
+| [`pages/almelo.html`](pages/almelo.html) | Main Stage \| Almelo | `192.168.50.16` |
 
-**Output and What Users See**
+> Note: `beiden-enschede.html` currently points both iframes at `172.16.62.202` — worth
+> double-checking against `hertogjanzaal.html`'s `172.16.62.201` if the Leffe Stage feed
+> looks wrong on that combined page.
 
-The output is a visually appealing webpage that displays several sections, each representing a different venue or stage. Each section shows up as a large banner (called a "jumbotron" in web development) with a background image, a title describing the location, and a brief description in Dutch. For example, users see options for "Bud Stage | Hengelo," "Jack Daniel's Stage | Hengelo," "Leffe Stage | Enschede," and others. The page also includes company logos at the top and a footer with copyright information.
+## Adding a new stage/venue
 
-**How It Achieves Its Purpose**
+1. Copy an existing single-stage page (e.g. [`pages/jupiler.html`](pages/jupiler.html)).
+2. Update the `<title>`, `<h1>`, and the iframe's `src` to the new device's IP.
+3. Add a background image to [`images/`](images) if needed.
+4. Add a new jumbotron block in [`index.html`](index.html) linking to the new page.
 
-The code achieves its purpose by using HTML structure combined with Bootstrap CSS framework to create an organized, professional-looking interface. At the top, it displays two company logos (Metropool and 10Eazy) along with the main title. Below that, it creates separate sections for each monitoring location using div containers styled as jumbotrons. Each jumbotron has a semi-transparent dark overlay on top of a background image to ensure the white text remains readable. The buttons in each section link to separate pages (like "/pages/jupiler.html" or "/pages/jackdaniel.html") where users can presumably view the actual sound level data for that specific venue.
+## Deployment
 
-**Logic Flow and Organization**
-
-The logical flow is straightforward and user-friendly. The page starts with branding and identification at the top, then presents options in a logical geographical and functional order. It first shows individual stages in Hengelo, then offers a combined view of both Hengelo stages together. Next, it presents the same pattern for Enschede locations, and finally shows the Almelo venue. This organization allows users to either monitor individual stages or get a combined overview of multiple stages in the same city. The code uses consistent styling and structure for each section, making it easy for users to understand their options and navigate to the specific sound monitoring data they need.
+The site is served as-is by GitHub Pages (see [`CNAME`](CNAME) for the custom domain,
+[`robots.txt`](robots.txt) for crawler rules). Pushing to the default branch is enough —
+there is no build/compile step.
