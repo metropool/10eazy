@@ -10,8 +10,7 @@
   font-family: CircularBook;
   src: url("/fonts/Circular/CircularStd-Book.woff2") format("woff2"),
     url("/fonts/Circular/CircularStd-Book.woff") format("woff"),
-    url("/sites/default/files/site/fonts/Circular/CircularStd-Book.eot")
-      format("embedded-opentype");
+    url("/fonts/Circular/CircularStd-Book.eot") format("embedded-opentype");
 }
 
 @font-face {
