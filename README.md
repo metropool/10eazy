@@ -36,12 +36,8 @@ they will not load over the public internet.
 | [`pages/beiden-hengelo.html`](pages/beiden-hengelo.html) | Bud Stage + Jack Daniel's Stage (combined) | `192.168.1.195` + `192.168.1.196` |
 | [`pages/hertogjanzaal.html`](pages/hertogjanzaal.html) | Leffe Stage \| Enschede | `172.16.62.201` |
 | [`pages/saxionzaal.html`](pages/saxionzaal.html) | Saxion Stage \| Enschede | `172.16.62.202` |
-| [`pages/beiden-enschede.html`](pages/beiden-enschede.html) | Leffe Stage + Saxion Stage (combined) | `172.16.62.202` (both iframes) |
+| [`pages/beiden-enschede.html`](pages/beiden-enschede.html) | Leffe Stage + Saxion Stage (combined) | `172.16.62.201` + `172.16.62.202` |
 | [`pages/almelo.html`](pages/almelo.html) | Main Stage \| Almelo | `192.168.50.16` |
-
-> Note: `beiden-enschede.html` currently points both iframes at `172.16.62.202` — worth
-> double-checking against `hertogjanzaal.html`'s `172.16.62.201` if the Leffe Stage feed
-> looks wrong on that combined page.
 
 ## Adding a new stage/venue
 
