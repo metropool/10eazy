@@ -1,10 +1,9 @@
 @font-face {
   font-family: BigNoodle;
   font-weight: 400;
-  src: url("fonts/BigNoodleTitling/BigNoodle.woff2") format("woff2"),
-    url("/fonts/BigNoodleTitling/BigNoodle.woff2") format("woff"),
+  src: url("/fonts/BigNoodleTitling/BigNoodle.woff2") format("woff2"),
     url("/fonts/BigNoodleTitling/BigNoodle.eot") format("embedded-opentype"),
-    url("/fonts/BigNoodleTitling/BigNoodle.ttf") format("ttf");
+    url("/fonts/BigNoodleTitling/BigNoodle.ttf") format("truetype");
 }
 
 @font-face {
@@ -33,7 +32,7 @@ body {
   font-size: 16px;
   line-height: 1.428571429;
   background-color: #39207c;
-  coler: #fff;
+  color: #fff;
 }
 
 
